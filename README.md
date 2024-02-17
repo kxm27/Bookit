@@ -1,3 +1,3 @@
-# bookit
+# Bookit
 
 A new Flutter project.
