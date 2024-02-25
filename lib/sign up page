@@ -1,0 +1,169 @@
+'package:flutter/material.dart';
+import 'package:one_app/login_page.dart';
+import 'package:one_app/sign_up_screan.dart';
+
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
+
+  @override
+  State<SignUpPage> createState() => _SignUpPageState();
+}
+
+class _SignUpPageState extends State<SignUpPage> {
+  late TextEditingController emailController,
+      passwordController,
+      fullnamecontroller,
+      resetpasswordcontroller,
+      phonenumbercontroller;
+
+  @override
+  void initState() {
+    fullnamecontroller = TextEditingController();
+    emailController = TextEditingController();
+    passwordController = TextEditingController();
+    resetpasswordcontroller = TextEditingController();
+    phonenumbercontroller = TextEditingController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    fullnamecontroller.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+    resetpasswordcontroller.dispose();
+    phonenumbercontroller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Image.asset('Assets/images/app_logo.jpg', fit: BoxFit.cover),
+      ),
+      body: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+            gradient: LinearGradient(colors: [
+          Colors.blue,
+          Colors.blueAccent.shade100,
+        ])),
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: 5),
+            _buildHeader(),
+            const SizedBox(height: 5),
+            Expanded(child: _buildInputFields())
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildHeader() {
+    return const Padding(
+      padding: EdgeInsets.all(8.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Create An Account",
+            style: TextStyle(color: Colors.white, fontSize: 40),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildInputFields() {
+    return Container(
+      width: double.infinity,
+      decoration: const BoxDecoration(
+          color: Colors.white60,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(60),
+            topRight: Radius.circular(60),
+          )),
+      padding: const EdgeInsets.all(20),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(height: 32),
+            Column(
+              children: [
+                _buildTextField(
+                    "Enter your full name here", fullnamecontroller),
+                const SizedBox(height: 16),
+                _buildTextField("Enter email here", emailController),
+                const SizedBox(height: 16),
+                _buildTextField("Password", passwordController, isPass: true),
+                const SizedBox(height: 16),
+                _buildTextField("Confirm Password", resetpasswordcontroller,
+                    isPass: true),
+                const SizedBox(height: 16),
+                _buildTextField("Phone Number", phonenumbercontroller,
+                    isPass: true),
+              ],
+            ),
+            const SizedBox(height: 10),
+            _buildButton("Sign Up", Colors.lightBlueAccent, () {
+              debugPrint("full name : ${fullnamecontroller.text}");
+              debugPrint("Email : ${emailController.text}");
+              debugPrint("Password : ${passwordController.text}");
+              debugPrint("confirm Password : ${resetpasswordcontroller.text}");
+              debugPrint("phone number: ${phonenumbercontroller.text}");
+            }),
+            const SizedBox(height: 10),
+            const Text(
+              "Or Sign Up with",
+              style: TextStyle(color: Colors.lightBlueAccent),
+            ),
+            const SizedBox(height: 10),
+            Row(
+              children: [
+                Expanded(child: _buildButton("Facebook", Colors.blue, () {})),
+                const SizedBox(width: 32),
+                Expanded(child: _buildButton("Google", Colors.red, () {})),
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTextField(String hint, TextEditingController controller,
+      {isPass = false}) {
+    return Container(
+      padding: const EdgeInsets.all(10),
+      decoration: const BoxDecoration(
+          color: Colors.white,
+          border: Border(bottom: BorderSide(color: Colors.grey))),
+      child: TextField(
+        controller: controller,
+        decoration: InputDecoration(
+            hintText: hint,
+            hintStyle: const TextStyle(color: Colors.grey),
+            border: InputBorder.none),
+        style: const TextStyle(color: Colors.black),
+        obscureText: isPass,
+      ),
+    );
+  }
+
+  Widget _buildButton(String buttonText, Color color, Function()? onPressed) {
+    return ElevatedButton(
+        onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+          shape: const StadiumBorder(),
+          elevation: 2,
+          backgroundColor: color,
+          minimumSize: const Size.fromHeight(60),
+        ),
+        child: Text(buttonText,
+            style: const TextStyle(fontSize: 16, color: Colors.white)));
+  }
+}
