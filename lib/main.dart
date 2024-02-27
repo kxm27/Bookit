@@ -1,4 +1,7 @@
 import 'package:bookit/firebase_options.dart';
+import 'package:bookit/login.dart';
+import 'package:bookit/register.dart';
+import 'package:bookit/welcome.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -12,12 +15,20 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Development in progress...'),
-        ),
+    return MaterialApp(
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white,
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.white,
+          surfaceTintColor: Colors.white
+        )
       ),
+      home: Welcome(),
+      routes: {
+        "welcome":(context) => Welcome(),
+        "login":(context) => Login(),
+        "register":(context) => Register(),
+      },
     );
   }
 }
