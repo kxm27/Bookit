@@ -30,9 +30,9 @@ class _LoginState extends State<Login> {
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Column(
               children: [
-                InputField(label: "Email",),
+                InputField(label: "Email", type: TextInputType.emailAddress, obscured: false),
                 SizedBox(height: 40,),
-                InputField(label: "Password",),
+                InputField(label: "Password", type: TextInputType.visiblePassword, obscured: true),
                 SizedBox(height: 20),
                 RememberMe(),
                 SizedBox(height: 20),

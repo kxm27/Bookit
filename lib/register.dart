@@ -30,13 +30,13 @@ class _RegisterState extends State<Register> {
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Column(
               children: [
-                InputField(label: "Full Name",),
+                InputField(label: "Full Name", type: TextInputType.name, obscured: false),
                 SizedBox(height: 10,),
-                InputField(label: "Email",),
+                InputField(label: "Email", type: TextInputType.emailAddress, obscured: false),
                 SizedBox(height: 10),
-                InputField(label: "Password",),
+                InputField(label: "Password", type: TextInputType.visiblePassword, obscured: true),
                 SizedBox(height: 10),
-                InputField(label: "Confirm Password",),
+                InputField(label: "Confirm Password", type: TextInputType.visiblePassword, obscured: true),
                 SizedBox(height: 25),
                 MaterialButton(
                   onPressed: () {}, 

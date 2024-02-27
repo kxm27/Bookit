@@ -4,7 +4,9 @@ Widget AppTitle = SizedBox(height: 45, child: Image.asset('assets/BookitTitle.pn
 
 class InputField extends StatefulWidget {
   final String label;
-  const InputField({super.key, required this.label});
+  final TextInputType type;
+  final bool obscured;
+  const InputField({super.key, required this.label, required this.type, required this.obscured});
 
   @override
   State<InputField> createState() => _InputFieldState();
@@ -19,6 +21,10 @@ class _InputFieldState extends State<InputField> {
                 Text(widget.label, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
                 SizedBox(height: 10,),
                 TextField(
+                  style: TextStyle(fontSize: 20,),
+                  maxLines: 1,
+                  keyboardType: widget.type,
+                  obscureText: widget.obscured,
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Color.fromARGB(255, 227, 233, 249),
