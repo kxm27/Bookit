@@ -12,12 +12,12 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: AppTitle,),
+      appBar: AppBar(title: appTitle,),
       body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 50),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 50),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -30,27 +30,27 @@ class _LoginState extends State<Login> {
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Column(
               children: [
-                InputField(label: "Email", type: TextInputType.emailAddress, obscured: false),
-                SizedBox(height: 40,),
-                InputField(label: "Password", type: TextInputType.visiblePassword, obscured: true),
-                SizedBox(height: 20),
-                RememberMe(),
-                SizedBox(height: 20),
+                const InputField(label: "Email", type: TextInputType.emailAddress, obscured: false),
+                const SizedBox(height: 40,),
+                const InputField(label: "Password", type: TextInputType.visiblePassword, obscured: true),
+                const SizedBox(height: 20),
+                const RememberMe(),
+                const SizedBox(height: 20),
                 MaterialButton(
                   onPressed: () {}, 
-                  color: Color.fromARGB(255, 168, 185, 230), 
+                  color: const Color.fromARGB(255, 168, 185, 230), 
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)), 
                   elevation: 0, 
-                  padding: EdgeInsets.symmetric(horizontal: 140, vertical: 15), 
-                  child: Text("Login", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),),),
-                SizedBox(height: 20,),
+                  padding: const EdgeInsets.symmetric(horizontal: 140, vertical: 15), 
+                  child: const Text("Login", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),),),
+                const SizedBox(height: 20,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text("New to Bookit?", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+                    const Text("New to Bookit?", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
                     InkWell(
                       onTap: () {Navigator.of(context).pop();}, 
-                      child: Text("Create an account here.", 
+                      child: const Text("Create an account here.", 
                             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, 
                             decoration: TextDecoration.underline, 
                             decorationColor: Color.fromRGBO(93, 125, 212, 1), 

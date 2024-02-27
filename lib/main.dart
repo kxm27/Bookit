@@ -18,16 +18,16 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
           backgroundColor: Colors.white,
           surfaceTintColor: Colors.white
         )
       ),
-      home: Welcome(),
+      home: const Welcome(),
       routes: {
-        "welcome":(context) => Welcome(),
-        "login":(context) => Login(),
-        "register":(context) => Register(),
+        "welcome":(context) => const Welcome(),
+        "login":(context) => const Login(),
+        "register":(context) => const Register(),
       },
     );
   }

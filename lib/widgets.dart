@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget AppTitle = SizedBox(height: 45, child: Image.asset('assets/BookitTitle.png', fit: BoxFit.fitHeight,));
+Widget appTitle = SizedBox(height: 45, child: Image.asset('assets/BookitTitle.png', fit: BoxFit.fitHeight,));
 
 class InputField extends StatefulWidget {
   final String label;
@@ -18,16 +18,16 @@ class _InputFieldState extends State<InputField> {
     return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(widget.label, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-                SizedBox(height: 10,),
+                Text(widget.label, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                const SizedBox(height: 10,),
                 TextField(
-                  style: TextStyle(fontSize: 20,),
+                  style: const TextStyle(fontSize: 20,),
                   maxLines: 1,
                   keyboardType: widget.type,
                   obscureText: widget.obscured,
                   decoration: InputDecoration(
                     filled: true,
-                    fillColor: Color.fromARGB(255, 227, 233, 249),
+                    fillColor: const Color.fromARGB(255, 227, 233, 249),
                     border: OutlineInputBorder(borderRadius: BorderRadius.circular(30), borderSide: BorderSide.none),
                   ),
                 ),
@@ -48,11 +48,11 @@ class _SignButtonState extends State<SignButton> {
   Widget build(BuildContext context) {
     return MaterialButton(
       onPressed: () {}, 
-      color: Color.fromARGB(255, 168, 185, 230), 
+      color: const Color.fromARGB(255, 168, 185, 230), 
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)), 
       elevation: 0, 
-      padding: EdgeInsets.symmetric(horizontal: 140, vertical: 15), 
-      child: Text(widget.text, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),),);
+      padding: const EdgeInsets.symmetric(horizontal: 140, vertical: 15), 
+      child: Text(widget.text, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),),);
   }
 }
 
@@ -73,10 +73,10 @@ class _RememberMeState extends State<RememberMe> {
               Checkbox(
                 value: x, 
                 onChanged: (value) {setState(() {x = !x;});},
-                activeColor: Color.fromARGB(255, 168, 185, 230),
+                activeColor: const Color.fromARGB(255, 168, 185, 230),
                 checkColor: Colors.black,
                 ),
-              Text("Remember me", style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
+              const Text("Remember me", style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
                 ],
               );
           }

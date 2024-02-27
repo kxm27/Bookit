@@ -7,12 +7,12 @@ class Welcome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: AppTitle),
+      appBar: AppBar(title: appTitle),
       body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 50),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 50),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -21,7 +21,7 @@ class Welcome extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 95,),
+          const SizedBox(height: 95,),
           Center(
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -35,12 +35,12 @@ class Welcome extends StatelessWidget {
                     children: [
                       Container(
                         decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 168, 185, 230),
+                          color: const Color.fromARGB(255, 168, 185, 230),
                           borderRadius: BorderRadius.circular(30),
                           ),
-                        child: Icon(Icons.person, size: 150, color: Colors.white,),
+                        child: const Icon(Icons.person, size: 150, color: Colors.white,),
                       ),
-                      Text("Customer", style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),)
+                      const Text("Customer", style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),)
                     ],
                   ),
                 ),
@@ -50,27 +50,27 @@ class Welcome extends StatelessWidget {
                     children: [
                       Container(
                         decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 168, 185, 230),
+                          color: const Color.fromARGB(255, 168, 185, 230),
                           borderRadius: BorderRadius.circular(30),
                           ),
-                        child: Icon(Icons.business, size: 150, color: Colors.white,),
+                        child: const Icon(Icons.business, size: 150, color: Colors.white,),
                       ),
-                      Text("Service Provider", style: TextStyle(fontSize: 25, fontWeight: FontWeight.w900),)
+                      const Text("Service Provider", style: TextStyle(fontSize: 25, fontWeight: FontWeight.w900),)
                     ],
                   ),
                 )
               ],
             ),
           ),
-          SizedBox(height: 100,),
-          Text("Already have an account?", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+          const SizedBox(height: 100,),
+          const Text("Already have an account?", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
           MaterialButton(
             onPressed: () {Navigator.of(context).pushNamed("login");}, 
-            color: Color.fromARGB(255, 168, 185, 230), 
+            color: const Color.fromARGB(255, 168, 185, 230), 
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)), 
             elevation: 0, 
-            padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15), 
-            child: Text("Go to login page", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),),
+            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15), 
+            child: const Text("Go to login page", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),),
             )
         ],
       ),
